@@ -15,6 +15,7 @@ class _ChatHeadState extends State<ChatHead> {
       height: 100.0,
       color: Colors.grey[300],
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Expanded(
               child: Column(
