@@ -15,7 +15,6 @@ class _ChatHeadState extends State<ChatHead> {
       height: 100.0,
       color: Colors.grey[300],
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Expanded(
               child: Column(
@@ -34,18 +33,16 @@ class _ChatHeadState extends State<ChatHead> {
                 ],
               ),
             ),
-            Center(
-              child: CircleAvatar(
-                radius: 76.0,
-                child: Text(
-                  "T",
-                  style: Theme.of(context)
-                    .textTheme
-                    .display1
-                    .apply(color: Colors.white, fontWeightDelta: 3),
-                ),
-              ),
 
+            CircleAvatar(
+              radius: 32.0,
+              child: Text(
+                "T",
+                style: Theme.of(context)
+                  .textTheme
+                  .display1
+                  .apply(color: Colors.white, fontWeightDelta: 3),
+              ),
             )
           ],
         )
