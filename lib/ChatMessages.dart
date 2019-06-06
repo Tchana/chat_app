@@ -4,13 +4,24 @@ class ChatMessages extends StatefulWidget {
   @override
   _ChatMessagesState createState() => _ChatMessagesState();
 
+  //wether the message comes from friend
   final bool isFriend;
+
+  //wether the message is last or not
   final bool isNotPrevious;
+
+  //friend initials to show in the avatar
+  final String friendInitial;
+
+  //the actual message
+  final String message;
 
   ChatMessages({
     Key key,
     this.isFriend: false,
     this.isNotPrevious: false,
+    this.message:"",
+    this.friendInitial:"",
 }): super(key:key);
 }
 
@@ -29,12 +40,12 @@ class _ChatMessagesState extends State<ChatMessages> {
           CircleAvatar(
             radius: 32.0,
             backgroundColor: Colors.white,
-            child: Text("Fr"),
+            child: Text(widget.friendInitial),
           ) : Container(),
           Expanded(
             child: Padding(
               padding: EdgeInsets.all(8.0),
-              child: Text("Chat here"),
+              child: Text(widget.message),
             ),
           ),
           !widget.isFriend && widget.isNotPrevious?

@@ -13,62 +13,70 @@ class _MyChatAppState extends State<MyChatApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-//      home: Scaffold(
-//        appBar: AppBar(
-//          title: Text("My chat App"),
-//          actions: <Widget>[
-//            IconButton(
-//              icon: Icon(Icons.help),
-//              onPressed: (){
-//                print("button was pressed");
-//              },
-//        )
-//          ],
-//        ),
-//        body: ListView(
-//          children: <Widget>[
-//            ChatHead(),
-//            ChatHead(),
-//            ChatHead(),
-////            ChatHead(),
-////            ChatHead(),
-//          ],
-//        ),
-//        bottomNavigationBar: BottomNavigationBar(
-//          currentIndex: _currentIndex,
-//          items: <BottomNavigationBarItem>[
-//            BottomNavigationBarItem(
-//              icon:Icon(Icons.home),
-//              title: Text("Home")
-//            ),
-//            BottomNavigationBarItem(
-//                icon:Icon(Icons.mail_outline),
-//                title: Text("Chats")
-//            ),
-//            BottomNavigationBarItem(
-//                icon:Icon(Icons.settings),
-//                title: Text("Settings")
-//            ),
-//          ],
-//          onTap: (int index){
-//            print("index is " + index.toString());
-//            setState(() {
-//              _currentIndex = index;
-//            });
-//
-//          },
-//        ),
-//        floatingActionButton: FloatingActionButton(
-//          onPressed: (){
-//            print("FAB was pressed");
-//          } ,
-//          child: Icon(Icons.add),
-//        ),
-
-//      ),
-        home: ChatView(
-
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("My chat App"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.help),
+              onPressed: (){
+                print("button was pressed");
+              },
+        )
+          ],
         ),
+        body: ListView(
+          children: <Widget>[
+            ChatHead(
+              friendName: "Thanos Junior",
+              lastMessage: "call me soon when you are free",
+              messageTime: DateTime.now(),
+            ),
+            ChatHead(
+              friendName: "Bobo Senior",
+              lastMessage: "Ok I will let you know ASAP",
+              messageTime: DateTime.now(),
+            ),
+//            ChatHead(),
+//            ChatHead(),
+//            ChatHead(),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon:Icon(Icons.home),
+              title: Text("Home")
+            ),
+            BottomNavigationBarItem(
+                icon:Icon(Icons.mail_outline),
+                title: Text("Chats")
+            ),
+            BottomNavigationBarItem(
+                icon:Icon(Icons.settings),
+                title: Text("Settings")
+            ),
+          ],
+          onTap: (int index){
+            print("index is " + index.toString());
+            setState(() {
+              _currentIndex = index;
+            });
+
+          },
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            print("FAB was pressed");
+          } ,
+          child: Icon(Icons.add),
+        ),
+
+      ),
+//        home: ChatView(
+//
+//        ),
     );
   }
 }
